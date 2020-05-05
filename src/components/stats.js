@@ -6,16 +6,16 @@ import ChartVN from "./ChartVN"
 import ChartGlobal from "./ChartGlobal"
 
 function stats () {
-    return <Container> 
+    return <> 
         <Row>
-            <Col><h2>Việt Nam</h2>
+            <Col xs="6"><h2 id="text">Việt Nam</h2>
                 <ChartVN />
             </Col>
-            <Col><h2>Thế giới</h2>
+            <Col xs="6"><h2 id="text">Thế giới</h2>
                 <ChartGlobal />
             </Col>
         </Row>
-    </Container>
+    </>
 }
 
 export default stats;

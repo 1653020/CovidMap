@@ -4,8 +4,8 @@ import Axios from 'axios';
 
 const temp =[{
     name: String(),
-    Nhiem: Number(),
-    NghiNhiem: Number(),
+    Nhiễm: Number(),
+    Nghi_Nhiễm: Number(),
     HoiPhuc: Number()
 }]
 
@@ -13,9 +13,9 @@ function ChartVN () {
     const [Patients, setPatients] = useState({});
     const [items,setItems] = useState([{
         name: String(),
-        Nhiem: Number(),
-        NghiNhiem: Number(),
-        HoiPhuc: Number()
+        Nhiễm: Number(),
+        Nghi_Nhiễm: Number(),
+        Hồi_Phục: Number()
     }])
 
     useEffect(() => {
@@ -42,18 +42,18 @@ function ChartVN () {
     for (let i=0; i<arrayKeys.length; i++){
         temp[i] = {
             name : arrayKeys[i],
-            Nhiem : [].concat(arrayOfObj[i])[0],
-            NghiNhiem : [].concat(arrayOfObj[i])[1],
-            HoiPhuc : [].concat(arrayOfObj[i])[2]
+            Nhiễm : [].concat(arrayOfObj[i])[0],
+            Nghi_Nhiễm : [].concat(arrayOfObj[i])[1],
+            Hồi_Phục : [].concat(arrayOfObj[i])[2]
         }
     }}
 
     return <LineChart
-            width={600}
-            height={500}
+            width={800}
+            height={700}
             data={items}
             margin={{
-                top: 5, right: 30, left: 5, bottom: 5,
+                top: 5, right: 10, left: 5, bottom: 5,
             }}
         >
             <CartesianGrid strokeDasharray="3 3" />
@@ -61,9 +61,9 @@ function ChartVN () {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="Nhiem" stroke="#FF0000" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="NghiNhiem" stroke="#FFFF00" />
-            <Line type="monotone" dataKey="HoiPhuc" stroke="#00FF00" />
+            <Line type="monotone" dataKey="Nhiễm" stroke="#FF0000" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="Nghi_Nhiễm" stroke="#FF6600" />
+            <Line type="monotone" dataKey="Hồi_Phục" stroke="#0033FF" />
         </LineChart>
 
 }
